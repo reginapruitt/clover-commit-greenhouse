@@ -387,21 +387,21 @@
             <h2>ready to /commit?</h2>
             <p class="subtitle">spring 2026 in NYC</p>
 
-            <!-- Greenhouse Embedded Application -->
-            <div style="background: white; border-radius: 16px; padding: 20px; margin-top: 30px;">
-                <iframe id="grnhse_app" 
-                        src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061" 
-                        width="100%" 
-                        height="1200px" 
-                        frameborder="0"
-                        scrolling="no"
-                        style="border: none; display: block;">
-                </iframe>
-            </div>
-            
-            <script src="https://boards.greenhouse.io/embed/job_board/js?for=cloverhealth"></script>
-        </div>
-    </div>
+            <!-- Greenhouse Embedded Application (cropped window) -->
+<div class="gh-embed-shell">
+  <div class="gh-clip">
+    <iframe
+      id="grnhse_app"
+      title="Apply – Clover Health"
+      src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061"
+      frameborder="0"
+      scrolling="yes"
+    ></iframe>
+  </div>
+</div>
+
+<script src="https://boards.greenhouse.io/embed/job_board/js?for=cloverhealth"></script>
+
 
     <!-- Simplified script - form handling now done by Greenhouse -->
     <script>
@@ -409,3 +409,25 @@
     </script>
 </body>
 </html>
+.gh-embed-shell {
+  background: #ffffff;
+  border-radius: 16px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+/* the visible window */
+.gh-clip {
+  height: 1100px;      /* visible area */
+  overflow: hidden;    /* hides job description region */
+  position: relative;
+}
+
+/* the iframe itself is taller, shifted up */
+.gh-clip iframe {
+  width: 100%;
+  height: 2600px;              /* tall enough so form questions exist below */
+  border: none;
+  display: block;
+  transform: translateY(-520px); /* adjust this value to hide description */
+}
