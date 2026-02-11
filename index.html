@@ -1,411 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Associate - /COMMIT Program | Clover Health</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!-- ===================== APPLICATION SECTION ===================== -->
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: #0f0f0f;
-            color: #ffffff;
-            line-height: 1.8;
-            min-height: 100vh;
-            padding: 40px 20px 80px 20px;
-        }
+<style>
+  /* Outer white container */
+  .application-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 40px;
+  }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+  /* Visible "window" that hides the job description */
+  .gh-clip {
+    width: 100%;
+    height: 900px;          /* Visible area */
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    background: #ffffff;
+  }
 
-        /* Header */
-        header {
-            margin-bottom: 60px;
-        }
+  /* Make iframe taller and shift upward */
+  .gh-clip iframe {
+    width: 100%;
+    height: 1700px;         /* Larger than container */
+    border: none;
+    display: block;
+    transform: translateY(-480px);  /* Adjust if needed */
+  }
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
+  /* Fallback button */
+  .gh-fallback {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #00ff88 0%, #9b87f5 100%);
+    color: #000;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+  }
 
-        .logo .slash {
-            color: #00ff88;
-        }
+  .gh-fallback:hover {
+    opacity: 0.9;
+  }
 
-        .back-link {
-            display: inline-block;
-            color: #9b87f5;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 40px;
-        }
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .gh-clip {
+      height: 1100px;
+    }
 
-        .back-link:hover {
-            color: #00ff88;
-        }
+    .gh-clip iframe {
+      height: 2000px;
+      transform: translateY(-600px);  /* More shift for mobile */
+    }
+  }
+</style>
 
-        /* Job Header */
-        .job-header {
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #333333;
-        }
+<div class="application-section">
+  <h2 style="margin-bottom: 8px;">Ready to Apply?</h2>
+  <p style="margin-bottom: 20px;">
+    Complete your application below. If the form doesn't display properly on your device, use the button to open it in a new tab.
+  </p>
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
+  <div class="gh-clip">
+    <iframe
+      id="grnhse_app"
+      src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061"
+      title="Apply – Associate at Clover Health"
+      scrolling="no"
+    ></iframe>
+  </div>
 
-        .job-meta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
+  <a
+    class="gh-fallback"
+    href="https://boards.greenhouse.io/cloverhealth/jobs/7599061"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Open application in new tab
+  </a>
+</div>
 
-        .meta-item {
-            color: #888888;
-        }
-
-        .meta-item::before {
-            content: '/ ';
-            color: #00ff88;
-        }
-
-        /* Job Description */
-        .job-section {
-            margin-bottom: 40px;
-        }
-
-        .job-section h2 {
-            font-size: 1.5rem;
-            color: #00ff88;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-transform: lowercase;
-        }
-
-        .job-section p {
-            color: #b8b8b8;
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-
-        .job-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .job-section ul li {
-            color: #b8b8b8;
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .job-section ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #00ff88;
-            font-weight: bold;
-        }
-
-        .emphasis {
-            color: #00ff88;
-            font-weight: 600;
-        }
-
-        /* Application Form */
-        .application-section {
-            background: #1a1a1a;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            padding: 40px;
-            margin-top: 60px;
-        }
-
-        .application-section h2 {
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-            text-transform: lowercase;
-        }
-
-        .application-section .subtitle {
-            color: #888888;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-
-        .section-divider {
-            border-top: 1px solid #333333;
-            margin: 40px 0 30px 0;
-            padding-top: 30px;
-        }
-
-        .section-title {
-            font-size: 1.2rem;
-            color: #9b87f5;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            font-size: 0.9rem;
-            color: #b8b8b8;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        label.required::after {
-            content: ' *';
-            color: #00ff88;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="url"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px 16px;
-            background: #0f0f0f;
-            border: 1px solid #333333;
-            color: #ffffff;
-            font-size: 1rem;
-            font-family: inherit;
-            border-radius: 4px;
-            transition: border-color 0.2s;
-        }
-
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #00ff88;
-        }
-
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300ff88' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
-        }
-
-        input[type="file"] {
-            cursor: pointer;
-        }
-
-        input[type="file"]::file-selector-button {
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #00ff88 0%, #9b87f5 100%);
-            color: #000000;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-right: 12px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        input[type="file"]::file-selector-button:hover {
-            opacity: 0.9;
-        }
-
-        .help-text {
-            font-size: 0.85rem;
-            color: #666666;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 18px 32px;
-            background: linear-gradient(135deg, #00ff88 0%, #9b87f5 100%);
-            color: #000000;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-transform: lowercase;
-            transition: transform 0.2s;
-            margin-top: 20px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .success-message {
-            background: #00ff88;
-            color: #000000;
-            padding: 40px;
-            border-radius: 8px;
-            margin: 40px 0;
-            font-weight: 600;
-            text-align: center;
-            display: none;
-            font-size: 1.1rem;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        .demo-note {
-            background: #1a1a1a;
-            border: 1px solid #9b87f5;
-            border-radius: 4px;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: #9b87f5;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 2rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-
-            .application-section {
-                padding: 30px 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <div class="logo"><span class="slash">/</span>COMMIT</div>
-            <a href="https://www.cloverhealth.com/commit" class="back-link">← back to /commit</a>
-        </header>
-
-        <div class="job-header">
-            <h1>Associate</h1>
-            <div class="job-meta">
-                <span class="meta-item">Full-time</span>
-                <span class="meta-item">New York, NY</span>
-                <span class="meta-item">Spring 2026</span>
-            </div>
-        </div>
-
-        <!-- Job Description -->
-        <div class="job-section">
-            <p>/COMMIT is not an internship. It's not a fellowship. It's not a "program."</p>
-            <h2>it's a real job. it's a bet.</h2>
-            <p>We're betting that the best builders and doers in the world have a chip on their shoulder and don't fit the mold.</p>
-            <p>You're betting that shipping real code is worth more than another semester of theory.</p>
-            <p>We've got a chip on our shoulder, and we hustle. <span class="emphasis">everyone, always.</span></p>
-        </div>
-
-        <div class="job-section">
-            <h2>what we're looking for</h2>
-            <p>have you:</p>
-            <ul>
-                <li>Taught yourself a new language, reverse-engineered an API, talked your way into a room?</li>
-                <li>Built something real that people used - an app with users, a tool your team relied on, a process that just makes sense?</li>
-                <li>Stayed up until 3 AM debugging, interviewing users, or driving somewhere to do it right?</li>
-                <li>Shipped a messy v1 that got 100 users instead of perfecting a v0 that got zero?</li>
-                <li>Hustled against all obstacles - coded it yourself, cold emailed strangers, showed up in person, fixed the problem?</li>
-            </ul>
-        </div>
-
-        <div class="job-section">
-            <h2>what you'll do</h2>
-            <ul>
-                <li>Solve real problems in healthcare - an industry that's fundamentally broken.</li>
-                <li>Build with AI from the ground up.</li>
-                <li>Ship code that impacts millions.</li>
-                <li><span class="emphasis">Get big things done.</span></li>
-            </ul>
-        </div>
-
-        <div class="job-section">
-            <h2>this is hard.</h2>
-            <p>Healthcare is confusing given all of the regulations, legacy systems, and broken incentives.</p>
-            <p>We're fixing it with AI, but it's not glamorous.</p>
-            <p>You'll work in person, in NYC. You'll ship real systems, not proofs of concept. You'll deal with messy data, edge cases, and lives at stake.</p>
-        </div>
-
-        <div class="job-section">
-            <h2>what's next?</h2>
-            <p>Give us your details. Tell us what you've built. This isn't another empty job posting - <span class="emphasis">we'll read everything you send.</span></p>
-            <p>If you pass? We'll have you prove it again with a case study, so you can see what it is really like.</p>
-            <p>If it's good? You'll present to board members and c-suite, and meet the team you'll work with.</p>
-            <p><span class="emphasis">That's it. Crush those steps, and you're in.</span></p>
-        </div>
-
-        <!-- Success Message -->
-        <div id="successMessage" class="success-message">
-            ✓ application submitted successfully!<br><br>
-            we'll review and be in touch soon.<br>
-            check your email for confirmation.
-        </div>
-
-        <!-- Application Form -->
-        <div class="application-section" id="applicationSection">
-            <h2>ready to /commit?</h2>
-            <p class="subtitle">spring 2026 in NYC</p>
-
-            <!-- Greenhouse Embedded Application -->
-            <div style="background: white; border-radius: 16px; padding: 20px; margin-top: 30px;">
-                <iframe id="grnhse_app" 
-                        src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061&b=" 
-                        width="100%" 
-                        height="1200px" 
-                        frameborder="0"
-                        scrolling="no"
-                        style="border: none; display: block;">
-                </iframe>
-            </div>
-            
-            <script src="https://boards.greenhouse.io/embed/job_board/js?for=cloverhealth"></script>
-        </div>
-    </div>
-
-    <!-- Simplified script - form handling now done by Greenhouse -->
-    <script>
-        // No custom form submission needed - Greenhouse handles it
-    </script>
-</body>
-</html>
+<!-- =============================================================== -->
