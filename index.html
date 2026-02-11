@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Associate - /COMMIT Program | Clover Health</title>
+    <title>Clover Health - Careers</title>
     <style>
         * {
             margin: 0;
@@ -17,62 +17,221 @@
             color: #ffffff;
             line-height: 1.8;
             min-height: 100vh;
-            padding: 40px 20px 80px 20px;
+            padding: 60px 20px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* Header */
         header {
-            margin-bottom: 60px;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .logo .slash {
-            color: #00ff88;
-        }
-
-        .back-link {
-            display: inline-block;
-            color: #9b87f5;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 40px;
-        }
-
-        .back-link:hover {
-            color: #00ff88;
-        }
-
-        /* Job Header */
-        .job-header {
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #333333;
+            margin-bottom: 80px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 4rem;
             font-weight: 700;
             color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        h1 .slash {
+            color: #00ff88;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .intro {
+            font-size: 1.5rem;
+            color: #ffffff;
             margin-bottom: 20px;
-            letter-spacing: -1px;
+            line-height: 1.6;
+        }
+
+        .intro .strikethrough {
+            color: #666666;
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+        }
+
+        .intro .highlight {
+            color: #00ff88;
+            font-weight: 500;
+        }
+
+        .culture-note {
+            font-size: 1rem;
+            color: #888888;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        .slack-mockup {
+            background: #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 40px 0 60px 0;
+            max-width: 500px;
+        }
+
+        .slack-header {
+            font-size: 0.9rem;
+            color: #b8b8b8;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .slack-header::before {
+            content: '# ';
+            color: #888888;
+        }
+
+        .slack-message {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .slack-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .slack-avatar.blue {
+            background: #6b7bf5;
+        }
+
+        .slack-avatar.green {
+            background: #00ff88;
+        }
+
+        .slack-content {
+            flex: 1;
+        }
+
+        .slack-user {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .slack-user.you {
+            color: #00ff88;
+        }
+
+        .slack-user.other {
+            color: #e0e0e0;
+        }
+
+        .slack-time {
+            color: #888888;
+            font-size: 0.8rem;
+            margin-left: 8px;
+        }
+
+        .slack-text {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .slack-text.highlight {
+            color: #00ff88;
+        }
+
+        .filters {
+            margin-bottom: 60px;
+            padding: 30px 0;
+            border-top: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .filter-group label {
+            font-size: 0.85rem;
+            color: #888888;
+            display: block;
+            margin-bottom: 8px;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        select:hover, input:hover {
+            border-color: #555555;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #00ff88;
+            background: #222222;
+        }
+
+        .job-count {
+            font-size: 0.9rem;
+            color: #9b87f5;
+            margin-top: 10px;
+        }
+
+        .jobs-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .job-card {
+            border-left: 3px solid transparent;
+            padding-left: 30px;
+            transition: border-color 0.3s;
+        }
+
+        .job-card:hover {
+            border-left-color: #00ff88;
+        }
+
+        .job-title {
+            font-size: 2rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
 
         .job-meta {
             display: flex;
             gap: 20px;
-            flex-wrap: wrap;
             margin-bottom: 20px;
             font-size: 0.95rem;
         }
@@ -86,229 +245,81 @@
             color: #00ff88;
         }
 
-        /* Job Description */
-        .job-section {
-            margin-bottom: 40px;
-        }
-
-        .job-section h2 {
-            font-size: 1.5rem;
-            color: #00ff88;
-            margin-bottom: 20px;
-            font-weight: 600;
-            text-transform: lowercase;
-        }
-
-        .job-section p {
+        .job-description {
             color: #b8b8b8;
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-
-        .job-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .job-section ul li {
-            color: #b8b8b8;
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .job-section ul li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #00ff88;
-            font-weight: bold;
-        }
-
-        .emphasis {
-            color: #00ff88;
-            font-weight: 600;
-        }
-
-        /* Application Form */
-        .application-section {
-            background: #1a1a1a;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            padding: 40px;
-            margin-top: 60px;
-        }
-
-        .application-section h2 {
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-            text-transform: lowercase;
-        }
-
-        .application-section .subtitle {
-            color: #888888;
             margin-bottom: 30px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #00ff88 0%, #9b87f5 100%);
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 0.95rem;
-        }
-
-        .section-divider {
-            border-top: 1px solid #333333;
-            margin: 40px 0 30px 0;
-            padding-top: 30px;
-        }
-
-        .section-title {
-            font-size: 1.2rem;
-            color: #9b87f5;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-            font-size: 0.9rem;
-            color: #b8b8b8;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        label.required::after {
-            content: ' *';
-            color: #00ff88;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="url"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px 16px;
-            background: #0f0f0f;
-            border: 1px solid #333333;
-            color: #ffffff;
-            font-size: 1rem;
-            font-family: inherit;
-            border-radius: 4px;
-            transition: border-color 0.2s;
-        }
-
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #00ff88;
-        }
-
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        select {
+            transition: all 0.3s;
             cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2300ff88' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
-        }
-
-        input[type="file"] {
-            cursor: pointer;
-        }
-
-        input[type="file"]::file-selector-button {
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #00ff88 0%, #9b87f5 100%);
-            color: #000000;
             border: none;
             border-radius: 4px;
-            cursor: pointer;
-            margin-right: 12px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        input[type="file"]::file-selector-button:hover {
-            opacity: 0.9;
-        }
-
-        .help-text {
-            font-size: 0.85rem;
-            color: #666666;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 18px 32px;
-            background: linear-gradient(135deg, #00ff88 0%, #9b87f5 100%);
-            color: #000000;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
             text-transform: lowercase;
-            transition: transform 0.2s;
-            margin-top: 20px;
         }
 
-        .submit-btn:hover {
+        .apply-btn:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
         }
 
-        .submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .success-message {
-            background: #00ff88;
-            color: #000000;
-            padding: 40px;
-            border-radius: 8px;
-            margin: 40px 0;
-            font-weight: 600;
+        .no-jobs {
+            padding: 80px 20px;
+            color: #888888;
+            font-size: 1.2rem;
             text-align: center;
-            display: none;
-            font-size: 1.1rem;
         }
 
-        .success-message.show {
-            display: block;
-        }
-
-        .demo-note {
+        .api-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
             background: #1a1a1a;
-            border: 1px solid #9b87f5;
+            padding: 12px 18px;
+            border: 1px solid #333333;
             border-radius: 4px;
-            padding: 15px;
-            margin-top: 20px;
+            z-index: 1000;
+        }
+
+        .api-toggle label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #888888;
             font-size: 0.85rem;
-            color: #9b87f5;
-            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        .api-toggle input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+            accent-color: #00ff88;
         }
 
         @media (max-width: 768px) {
-            .logo {
-                font-size: 2rem;
+            h1 {
+                font-size: 2.5rem;
             }
             
-            h1 {
-                font-size: 2rem;
+            .filter-row {
+                flex-direction: column;
+            }
+            
+            .filter-group {
+                min-width: auto;
             }
 
-            .application-section {
-                padding: 30px 20px;
+            .job-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -316,76 +327,63 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo"><span class="slash">/</span>COMMIT</div>
-            <a href="https://www.cloverhealth.com/commit" class="back-link">← back to /commit</a>
+            <h1><span class="slash">/</span>COMMIT</h1>
+            <p class="tagline">fix healthcare. shipping spring 2026. NYC.</p>
+            
+            <p class="intro">
+                we care...<br>
+                <span class="strikethrough">about your GPA.</span><br>
+                <span class="strikethrough">about your résumé.</span><br>
+                <span class="strikethrough">where you went to school.</span><br>
+                <br>
+                that you <span class="highlight">build.</span>
+            </p>
+            
+            <p class="culture-note">
+                "just pushed a fix, try now?" → "shipped"
+            </p>
         </header>
 
-        <div class="job-header">
-            <h1>Associate</h1>
-            <div class="job-meta">
-                <span class="meta-item">Full-time</span>
-                <span class="meta-item">New York, NY</span>
-                <span class="meta-item">Spring 2026</span>
+        <div class="slack-mockup">
+            <div class="slack-header">beta-testers</div>
+            <div class="slack-message">
+                <div class="slack-avatar blue"></div>
+                <div class="slack-content">
+                    <div>
+                        <span class="slack-user other">alex_codes</span>
+                        <span class="slack-time">2:34 PM</span>
+                    </div>
+                    <div class="slack-text">yo this feature is broken</div>
+                </div>
+            </div>
+            <div class="slack-message">
+                <div class="slack-avatar green"></div>
+                <div class="slack-content">
+                    <div>
+                        <span class="slack-user you">you</span>
+                        <span class="slack-time">2:35 PM</span>
+                    </div>
+                    <div class="slack-text highlight">just pushed a fix, try now?</div>
+                </div>
+            </div>
+            <div class="slack-message">
+                <div class="slack-avatar blue"></div>
+                <div class="slack-content">
+                    <div>
+                        <span class="slack-user other">alex_codes</span>
+                        <span class="slack-time">2:36 PM</span>
+                    </div>
+                    <div class="slack-text">oh shit that was fast</div>
+                </div>
             </div>
         </div>
 
-        <!-- Job Description -->
-        <div class="job-section">
-            <p>/COMMIT is not an internship. It's not a fellowship. It's not a "program."</p>
-            <h2>it's a real job. it's a bet.</h2>
-            <p>We're betting that the best builders and doers in the world have a chip on their shoulder and don't fit the mold.</p>
-            <p>You're betting that shipping real code is worth more than another semester of theory.</p>
-            <p>We've got a chip on our shoulder, and we hustle. <span class="emphasis">everyone, always.</span></p>
+        <div class="api-toggle">
+            <label>
+                <input type="checkbox" id="useLiveData">
+                live data
+            </label>
         </div>
-
-        <div class="job-section">
-            <h2>what we're looking for</h2>
-            <p>have you:</p>
-            <ul>
-                <li>Taught yourself a new language, reverse-engineered an API, talked your way into a room?</li>
-                <li>Built something real that people used - an app with users, a tool your team relied on, a process that just makes sense?</li>
-                <li>Stayed up until 3 AM debugging, interviewing users, or driving somewhere to do it right?</li>
-                <li>Shipped a messy v1 that got 100 users instead of perfecting a v0 that got zero?</li>
-                <li>Hustled against all obstacles - coded it yourself, cold emailed strangers, showed up in person, fixed the problem?</li>
-            </ul>
-        </div>
-
-        <div class="job-section">
-            <h2>what you'll do</h2>
-            <ul>
-                <li>Solve real problems in healthcare - an industry that's fundamentally broken.</li>
-                <li>Build with AI from the ground up.</li>
-                <li>Ship code that impacts millions.</li>
-                <li><span class="emphasis">Get big things done.</span></li>
-            </ul>
-        </div>
-
-        <div class="job-section">
-            <h2>this is hard.</h2>
-            <p>Healthcare is confusing given all of the regulations, legacy systems, and broken incentives.</p>
-            <p>We're fixing it with AI, but it's not glamorous.</p>
-            <p>You'll work in person, in NYC. You'll ship real systems, not proofs of concept. You'll deal with messy data, edge cases, and lives at stake.</p>
-        </div>
-
-        <div class="job-section">
-            <h2>what's next?</h2>
-            <p>Give us your details. Tell us what you've built. This isn't another empty job posting - <span class="emphasis">we'll read everything you send.</span></p>
-            <p>If you pass? We'll have you prove it again with a case study, so you can see what it is really like.</p>
-            <p>If it's good? You'll present to board members and c-suite, and meet the team you'll work with.</p>
-            <p><span class="emphasis">That's it. Crush those steps, and you're in.</span></p>
-        </div>
-
-        <!-- Success Message -->
-        <div id="successMessage" class="success-message">
-            ✓ application submitted successfully!<br><br>
-            we'll review and be in touch soon.<br>
-            check your email for confirmation.
-        </div>
-
-        <!-- Application Form -->
-        <div class="application-section" id="applicationSection">
-            <h2>ready to /commit?</h2>
-            <p class="subtitle">spring 2026 in NYC</p>
 
 <!-- ===================== GREENHOUSE EMBED (OPTION 1: RELIABLE) ===================== -->
 
