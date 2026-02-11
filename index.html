@@ -387,45 +387,33 @@
             <h2>ready to /commit?</h2>
             <p class="subtitle">spring 2026 in NYC</p>
 
-            <!-- Greenhouse Embedded Application (cropped window) -->
+<!-- Greenhouse Embedded Application (recommended) -->
 <div class="gh-embed-shell">
-  <div class="gh-clip">
-    <iframe
-      id="grnhse_app"
-      title="Apply – Clover Health"
-      src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061"
-      frameborder="0"
-      scrolling="yes"
-    ></iframe>
-  </div>
+  <iframe
+    id="grnhse_app"
+    title="Apply – Clover Health"
+    src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061"
+    frameborder="0"
+    scrolling="yes"
+  ></iframe>
 </div>
 
 <script src="https://boards.greenhouse.io/embed/job_board/js?for=cloverhealth"></script>
-
-</body>
-</html>
 .gh-embed-shell {
   background: #ffffff;
   border-radius: 16px;
+  padding: 0;
   margin-top: 30px;
   overflow: hidden;
 }
 
-/* the visible window */
-.gh-clip {
-  height: 1100px;      /* visible area */
-  overflow: hidden;    /* hides job description region */
-  position: relative;
-}
-
-/* the iframe itself is taller, shifted up */
-.gh-clip iframe {
+#grnhse_app {
   width: 100%;
-  height: 2600px;              /* tall enough so form questions exist below */
+  height: 2200px;     /* start big so questions definitely appear */
   border: none;
   display: block;
-  transform: translateY(-520px); /* adjust this value to hide description */
 }
+
     <!-- Simplified script - form handling now done by Greenhouse -->
     <script>
         // No custom form submission needed - Greenhouse handles it
