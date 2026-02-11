@@ -387,34 +387,65 @@
             <h2>ready to /commit?</h2>
             <p class="subtitle">spring 2026 in NYC</p>
 
-<!-- Greenhouse Embedded Application (recommended) -->
-<div class="gh-embed-shell">
+<!-- ===================== GREENHOUSE EMBED (OPTION 1: RELIABLE) ===================== -->
+
+<style>
+  /* Keeps your /COMMIT dark container intact; iframe itself sits in a white “card” */
+  .gh-card {
+    background: #ffffff;
+    border-radius: 16px;
+    margin-top: 30px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+  }
+
+  /* Make the iframe tall enough so questions are visible without hacks */
+  #grnhse_app {
+    width: 100%;
+    height: 2400px;   /* start big; adjust down after confirming everything shows */
+    border: 0;
+    display: block;
+  }
+
+  /* Optional: give mobile a bit more room (EEOC/GDPR can expand) */
+  @media (max-width: 768px) {
+    #grnhse_app {
+      height: 3000px;
+    }
+  }
+
+  /* Optional fallback link (dark vibe) */
+  .gh-fallback {
+    display: inline-block;
+    margin-top: 14px;
+    color: #9b87f5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .gh-fallback:hover { color: #00ff88; }
+</style>
+
+<div class="gh-card">
   <iframe
     id="grnhse_app"
     title="Apply – Clover Health"
     src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061"
-    frameborder="0"
     scrolling="yes"
   ></iframe>
 </div>
 
+<a
+  class="gh-fallback"
+  href="https://boards.greenhouse.io/cloverhealth/jobs/7599061"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  open application in a new tab →
+</a>
+
+<!-- Greenhouse helper script (keep this) -->
 <script src="https://boards.greenhouse.io/embed/job_board/js?for=cloverhealth"></script>
-.gh-embed-shell {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 0;
-  margin-top: 30px;
-  overflow: hidden;
-}
 
-#grnhse_app {
-  width: 100%;
-  height: 2200px;     /* start big so questions definitely appear */
-  border: none;
-  display: block;
-}
+<!-- =================== /GREENHOUSE EMBED (OPTION 1) =================== -->
 
-    <!-- Simplified script - form handling now done by Greenhouse -->
-    <script>
-        // No custom form submission needed - Greenhouse handles it
-    </script>
