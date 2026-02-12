@@ -1,171 +1,241 @@
-<div class="commit-page">
-  <div class="commit-container">
-    <header class="commit-header">
-      <h1 class="commit-h1"><span class="commit-slash">/</span>COMMIT</h1>
-      <p class="commit-tagline">fix healthcare. shipping spring 2026. NYC.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>/COMMIT — Clover Health</title>
+  <meta name="description" content="/COMMIT — fix healthcare. shipping spring 2026. NYC. Apply via Greenhouse." />
 
-      <p class="commit-intro">
-        we care...<br>
-        <span class="commit-strike">about your GPA.</span><br>
-        <span class="commit-strike">about your résumé.</span><br>
-        <span class="commit-strike">where you went to school.</span><br><br>
-        that you <span class="commit-highlight">build.</span>
-      </p>
+  <style>
+    /* ===================== /COMMIT (SCOPED) ===================== */
+    .commit-page {
+      --bg: #0f0f0f;
+      --fg: #ffffff;
+      --muted: #b8b8b8;
+      --muted2: #888888;
+      --panel: #2a2a2a;
+      --terminal: #031f12;
+      --white-panel: #ffffff;
+      --green: #00ff88;
+      --purple: #9b87f5;
+      --border: #2a2a2a;
 
-      <p class="commit-note">"just pushed a fix, try now?" → "shipped"</p>
-    </header>
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.8;
+      min-height: 100vh;
+      padding: 60px 20px 80px;
+    }
 
-    <section class="commit-slack" aria-label="Slack mock conversation">
-      <div class="commit-slack-header">beta-testers</div>
+    .commit-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-      <div class="commit-slack-message">
-        <div class="commit-avatar commit-avatar-blue" aria-hidden="true"></div>
-        <div class="commit-slack-content">
-          <div>
-            <span class="commit-user">alex_codes</span>
-            <span class="commit-time">2:34 PM</span>
+    /* ===== HERO ===== */
+    .commit-header { margin-bottom: 60px; }
+    .commit-h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: -2px;
+    }
+    .commit-slash { color: var(--green); }
+    .commit-tagline {
+      font-size: 1.3rem;
+      color: #e0e0e0;
+      font-weight: 300;
+      margin-bottom: 26px;
+    }
+    .commit-intro {
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .commit-strike {
+      color: #666;
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+    }
+    .commit-highlight { color: var(--green); font-weight: 600; }
+    .commit-note { font-size: 1rem; color: var(--muted2); font-style: italic; }
+
+    /* ===== SLACK MOCK ===== */
+    .commit-slack {
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 40px 0 60px;
+      max-width: 520px;
+    }
+    .commit-slack-header {
+      font-size: .9rem;
+      color: var(--muted);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    .commit-slack-header::before { content: "# "; color: var(--muted2); }
+
+    .commit-slack-message { margin-bottom: 12px; display: flex; gap: 12px; }
+    .commit-avatar { width: 36px; height: 36px; border-radius: 4px; flex-shrink: 0; }
+    .commit-avatar-blue { background: #6b7bf5; }
+    .commit-avatar-green { background: var(--green); }
+
+    .commit-slack-content { flex: 1; }
+    .commit-user { font-size: .9rem; font-weight: 700; color: #e0e0e0; }
+    .commit-user-you { color: var(--green); }
+    .commit-time { color: var(--muted2); font-size: .8rem; margin-left: 8px; }
+    .commit-text { color: #e0e0e0; font-size: .95rem; line-height: 1.4; }
+    .commit-text-highlight { color: var(--green); font-weight: 600; }
+
+    /* ===== CTA ===== */
+    .commit-cta-section { margin: 10px 0 28px; }
+    .commit-cta {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin: 0;
+      background: linear-gradient(135deg, var(--green) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== IFRAME ===== */
+    .commit-iframe-card {
+      background: var(--white-panel);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    #grnhse_app {
+      width: 100%;
+      height: 2400px;
+      border: 0;
+      display: block;
+    }
+
+    /* ===== TERMINAL NOTE ===== */
+    .commit-terminal-note {
+      background: var(--terminal);
+      border: 1px solid var(--green);
+      border-radius: 14px;
+      padding: 22px;
+      margin-top: 32px;
+      color: var(--green);
+      font-family: "SF Mono", "Menlo", "Monaco", monospace;
+      box-shadow: 0 0 24px rgba(0, 255, 136, 0.15);
+    }
+    .commit-terminal-header { font-size: .85rem; margin-bottom: 10px; opacity: .85; }
+    .commit-terminal-note p { margin: 0; line-height: 1.6; }
+    .commit-terminal-note a { color: var(--green); text-decoration: underline; }
+    .commit-terminal-note a:hover { color: var(--purple); }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .commit-h1 { font-size: 2.6rem; }
+      .commit-cta { font-size: 2.1rem; }
+      #grnhse_app { height: 3000px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="commit-page">
+    <div class="commit-container">
+
+      <!-- ===== HERO / HEADER ===== -->
+      <header class="commit-header">
+        <h1 class="commit-h1"><span class="commit-slash">/</span>COMMIT</h1>
+        <p class="commit-tagline">fix healthcare. shipping spring 2026. NYC.</p>
+
+        <p class="commit-intro">
+          we care...<br />
+          <span class="commit-strike">about your GPA.</span><br />
+          <span class="commit-strike">about your résumé.</span><br />
+          <span class="commit-strike">where you went to school.</span><br /><br />
+          that you <span class="commit-highlight">build.</span>
+        </p>
+
+        <p class="commit-note">"just pushed a fix, try now?" → "shipped"</p>
+      </header>
+
+      <!-- ===== SLACK MOCKUP ===== -->
+      <section class="commit-slack" aria-label="Slack mock conversation">
+        <div class="commit-slack-header">beta-testers</div>
+
+        <div class="commit-slack-message">
+          <div class="commit-avatar commit-avatar-blue" aria-hidden="true"></div>
+          <div class="commit-slack-content">
+            <div>
+              <span class="commit-user">alex_codes</span>
+              <span class="commit-time">2:34 PM</span>
+            </div>
+            <div class="commit-text">yo this feature is broken</div>
           </div>
-          <div class="commit-text">yo this feature is broken</div>
         </div>
-      </div>
 
-      <div class="commit-slack-message">
-        <div class="commit-avatar commit-avatar-green" aria-hidden="true"></div>
-        <div class="commit-slack-content">
-          <div>
-            <span class="commit-user commit-user-you">you</span>
-            <span class="commit-time">2:35 PM</span>
+        <div class="commit-slack-message">
+          <div class="commit-avatar commit-avatar-green" aria-hidden="true"></div>
+          <div class="commit-slack-content">
+            <div>
+              <span class="commit-user commit-user-you">you</span>
+              <span class="commit-time">2:35 PM</span>
+            </div>
+            <div class="commit-text commit-text-highlight">just pushed a fix, try now?</div>
           </div>
-          <div class="commit-text commit-text-highlight">just pushed a fix, try now?</div>
         </div>
-      </div>
 
-      <div class="commit-slack-message">
-        <div class="commit-avatar commit-avatar-blue" aria-hidden="true"></div>
-        <div class="commit-slack-content">
-          <div>
-            <span class="commit-user">alex_codes</span>
-            <span class="commit-time">2:36 PM</span>
+        <div class="commit-slack-message">
+          <div class="commit-avatar commit-avatar-blue" aria-hidden="true"></div>
+          <div class="commit-slack-content">
+            <div>
+              <span class="commit-user">alex_codes</span>
+              <span class="commit-time">2:36 PM</span>
+            </div>
+            <div class="commit-text">oh shit that was fast</div>
           </div>
-          <div class="commit-text">oh shit that was fast</div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="commit-apply" id="apply">
-      <h2 class="commit-h2">apply</h2>
-      <p class="commit-apply-subtext">
-        If the embedded form doesn’t behave on your device, open it in a new tab.
-      </p>
+      <!-- ===== APPLY CTA ===== -->
+      <section class="commit-cta-section" aria-label="Apply section heading">
+        <h2 class="commit-cta">ready to /commit?</h2>
+      </section>
 
-      <div class="commit-iframe-card">
-        <iframe
-          id="grnhse_app"
-          title="Apply – Clover Health"
-          src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061"
-          scrolling="yes"
-        ></iframe>
-      </div>
+      <!-- ===== GREENHOUSE EMBED ===== -->
+      <section class="commit-apply" id="apply" aria-label="Application form">
+        <div class="commit-iframe-card">
+          <!-- Greenhouse job id: 7599061 -->
+          <iframe
+            id="grnhse_app"
+            title="Apply – Clover Health COMMIT Program"
+            src="https://boards.greenhouse.io/embed/job_app?for=cloverhealth&token=7599061"
+            loading="lazy"
+            scrolling="yes"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
 
-      <a
-        class="commit-fallback"
-        href="https://boards.greenhouse.io/cloverhealth/jobs/7599061"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        open application in a new tab →
-      </a>
-    </section>
-  </div>
-</div>
+        <!-- Terminal-style helper message -->
+        <div class="commit-terminal-note" role="note" aria-label="Application help">
+          <div class="commit-terminal-header">$ application_help.sh</div>
+          <p>
+            if the embedded form misbehaves on your device,
+            <a
+              href="https://boards.greenhouse.io/cloverhealth/jobs/7599061"
+              target="_blank"
+              rel="noopener noreferrer"
+            >open it in a new tab</a>.
+          </p>
+        </div>
+      </section>
 
-<style>
-  .commit-page {
-    --bg: #0f0f0f;
-    --fg: #ffffff;
-    --muted: #b8b8b8;
-    --muted2: #888888;
-    --panel: #2a2a2a;
-    --border: #333333;
-    --green: #00ff88;
-    --purple: #9b87f5;
+    </div>
+  </main>
 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--fg);
-    line-height: 1.8;
-    padding: 60px 20px;
-  }
-
-  .commit-container { max-width: 1000px; margin: 0 auto; }
-
-  .commit-header { margin-bottom: 60px; }
-  .commit-h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 18px;
-    letter-spacing: -2px;
-  }
-  .commit-slash { color: var(--green); }
-  .commit-tagline { font-size: 1.3rem; color: #e0e0e0; font-weight: 300; margin-bottom: 26px; }
-
-  .commit-intro { font-size: 1.5rem; margin-bottom: 14px; line-height: 1.6; }
-  .commit-strike { color: #666; text-decoration: line-through; text-decoration-thickness: 2px; }
-  .commit-highlight { color: var(--green); font-weight: 600; }
-  .commit-note { font-size: 1rem; color: var(--muted2); font-style: italic; }
-
-  .commit-slack {
-    background: var(--panel);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 40px 0 60px;
-    max-width: 520px;
-  }
-  .commit-slack-header { font-size: .9rem; color: var(--muted); margin-bottom: 15px; font-weight: 700; }
-  .commit-slack-header::before { content: "# "; color: var(--muted2); }
-  .commit-slack-message { margin-bottom: 12px; display: flex; gap: 12px; }
-  .commit-avatar { width: 36px; height: 36px; border-radius: 4px; flex-shrink: 0; }
-  .commit-avatar-blue { background: #6b7bf5; }
-  .commit-avatar-green { background: var(--green); }
-  .commit-slack-content { flex: 1; }
-  .commit-user { font-size: .9rem; font-weight: 700; color: #e0e0e0; }
-  .commit-user-you { color: var(--green); }
-  .commit-time { color: var(--muted2); font-size: .8rem; margin-left: 8px; }
-  .commit-text { color: #e0e0e0; font-size: .95rem; line-height: 1.4; }
-  .commit-text-highlight { color: var(--green); font-weight: 600; }
-
-  .commit-apply { margin-top: 10px; }
-  .commit-h2 { font-size: 1.6rem; color: var(--green); margin-bottom: 10px; text-transform: lowercase; }
-  .commit-apply-subtext { color: #cfcfcf; margin-bottom: 16px; }
-
-  .commit-iframe-card {
-    background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #2a2a2a;
-  }
-
-  #grnhse_app {
-    width: 100%;
-    height: 2400px;
-    border: 0;
-    display: block;
-  }
-
-  .commit-fallback {
-    display: inline-block;
-    margin-top: 14px;
-    color: var(--purple);
-    text-decoration: none;
-    font-size: .95rem;
-    font-weight: 700;
-  }
-  .commit-fallback:hover { color: var(--green); }
-
-  @media (max-width: 768px) {
-    .commit-h1 { font-size: 2.6rem; }
-    #grnhse_app { height: 3000px; }
-  }
-</style>
-
-<script src="https://boards.greenhouse.io/embed/job_board/js?for=cloverhealth"></script>
+  <!-- Greenhouse helper script (keep) -->
+  <script src="https://boards.greenhouse.io/embed/job_board/js?for=cloverhealth"></script>
+</body>
+</html>
