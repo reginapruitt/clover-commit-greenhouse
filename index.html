@@ -111,7 +111,9 @@
 
     #grnhse_app {
       width: 100%;
-      height: 2400px;
+      min-height: 1800px;
+      height: 100vh;
+      max-height: 3200px;
       border: 0;
       display: block;
     }
@@ -134,9 +136,12 @@
 
     /* ===== MOBILE ===== */
     @media (max-width: 768px) {
+      .commit-page { padding: 40px 18px 60px; }
       .commit-h1 { font-size: 2.6rem; }
+      .commit-intro { font-size: 1.25rem; }
       .commit-cta { font-size: 2.1rem; }
-      #grnhse_app { height: 3000px; }
+      .commit-slack { max-width: 100%; }
+      #grnhse_app { min-height: 2000px; }
     }
   </style>
 </head>
